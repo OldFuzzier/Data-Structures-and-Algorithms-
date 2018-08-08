@@ -1,0 +1,5 @@
+如果存在需要使用父节点的子节点，可以通过
+
+例如 root.left = self.recursion(self.left,...) 然后子节点 return node 的方式进行访问，
+
+具体可以参考 二叉搜索树的插入中两种方法的对比。
