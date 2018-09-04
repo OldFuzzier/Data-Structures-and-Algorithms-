@@ -25,3 +25,16 @@ class Solution:
                     stack.append((node.left, False))  # 3.left
 
         return traversal
+
+
+# PCWay clearWay
+# https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/151213/Short-and-Simple-Python-Solution-beats-98.98
+# dfs(node.right)+reverse
+class Solution2(object):
+    def postorderTraversal(self, root):
+        ret, stack = [], root and [root]  # trickier written
+        while stack:
+            node = stack.pop()
+            ret.append(node.val)
+            stack += [child for child in (node.left, node.right) if child]
+        return ret[::-1]
