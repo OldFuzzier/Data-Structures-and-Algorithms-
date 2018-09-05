@@ -1,0 +1,18 @@
+1 HashTable原理
+  使用hash函数 map keys to buckets，
+  两个关键因素: hash函数，buckets
+
+2 HashTable两个关键问题
+  2.1 y=f(x) Hash函数f() 将A与B建立了关系
+  2.2 解决冲突问题，因为通过hash函数后的y可能相同，所以x与y可能不是一一对应
+	解决办法: 小数据可以用array存储，大数据需要使用平衡BST来存储
+
+3 HashTable复杂度
+  3.1 hash+array(也可以hash+listnode)
+    当N<M: Time Complexity: O(1)insert and search
+    当N>M: Time Complexity: O(1)insert, O(n)search
+  3.2 hash+高平衡BST
+    be worst: O(logn)insert, O(logn)search
+
+4 Design the Key - Summary
+https://leetcode.com/explore/learn/card/hash-table/185/hash_table_design_the_key/1128/
