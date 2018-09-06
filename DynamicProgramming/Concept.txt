@@ -1,0 +1,9 @@
+Reference:
+  jobbole: http://python.jobbole.com/81465/
+  csdn: https://blog.csdn.net/MrLevo520/article/details/75676160
+  https://www.deeplearn.me/216.html
+
+方式: 
+  1 直接自顶向下实现递归式，并将中间结果保存，这叫备忘录法
+  2 按照递归式自底向上地迭代，将结果保存在某个数据结构中求解
+
