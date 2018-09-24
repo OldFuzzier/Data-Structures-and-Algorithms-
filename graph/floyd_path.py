@@ -14,13 +14,17 @@
 from collections import defaultdict
 
 # init vector序列
-vector_list = range(0, 7)  #need: 1, 2, 3, 4, 5, 6
+vector_list = range(0, 7)  # need: 1, 2, 3, 4, 5, 6
+
 
 # init 这里需要创建图矩阵
 def init_graph():
     # return: graph: graph_matrix
     graph = []
     path = []
+    # 如果graph结构复杂，可以用图表的结构存储
+    # graph = defaultdict(dict)
+    # path = defaultdict(dict)
     for raw in vector_list:
         graph.append([])
         path.append([])
@@ -52,8 +56,8 @@ def floyd_path():
     for k in vector_list:  # 允许插于的中间的vector
         for i in vector_list:
             for j in vector_list:
-                if graph[i][j] > graph[i][k]+graph[k][j]:
-                    graph[i][j] = graph[i][k]+graph[k][j]
+                if graph[i][j] > graph[i][k] + graph[k][j]:
+                    graph[i][j] = graph[i][k] + graph[k][j]
                     path[i][j] = k  # i到j的最短距离必经的点
 
 
@@ -73,3 +77,5 @@ if __name__ == '__main__':
     path_temp = shortest_path(1, 6)
     path_temp.insert(0, 1)  # 插入第一个vector
     print path_temp
+
+
